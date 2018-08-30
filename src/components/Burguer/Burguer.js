@@ -5,7 +5,6 @@ import { withRouter } from 'react-router-dom';
 
 
 const Burguer = (props) =>{
-    console.log(props);
     let transformedIngredients = Object.keys(props.ingredients)
         .map(ingKey => {
             return [...Array(props.ingredients[ingKey])].map((_, i)=>{
@@ -15,7 +14,6 @@ const Burguer = (props) =>{
         .reduce((arr,el) => {
             return arr.concat(el)
         },[]);
-    console.log(transformedIngredients);
 
     if(transformedIngredients.length === 0){
         transformedIngredients = <p>Please start adding some ingredients</p>

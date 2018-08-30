@@ -8,7 +8,7 @@ import Modal from '../../components/UI/Modal/Modal';
 import OrderSummary from '../../components/Burguer/OrderSummary/OrderSummary';
 import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
 import Spinner from '../../components/UI/Spinner/Spinner';
-import * as actions from '../../store/actions/index';
+import * as actions from '../../store/actions';
 
 
 
@@ -20,7 +20,6 @@ class BurguerBuilder extends Component{
     }
 
     componentDidMount(){
-        console.log(this.props)
         this.props.onInitIngredients();
        
     }
