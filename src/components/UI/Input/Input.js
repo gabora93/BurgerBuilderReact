@@ -12,7 +12,7 @@ const Input = (props) => {
     
     let validationError = null;
     if(props.invalid && props.touched){
-        validationError = <p>dd{props.valueType}</p>
+        validationError = <p>{props.valueType}</p>
     }
 
     switch(props.elementType){
