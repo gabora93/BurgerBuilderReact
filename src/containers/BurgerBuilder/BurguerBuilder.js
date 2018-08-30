@@ -38,7 +38,13 @@ class BurguerBuilder extends Component{
 
 
     purchaseHandler = () => {
-        this.setState({purchasing:true})
+        if(this.props.isAuth){
+            this.setState({purchasing:true})
+        }else{
+            this.props.onSetAuthRedirectpath('/checkout');
+            this.props.history.push('/auth');
+        }
+        
     }
 
     purchaseCancelHandler = () =>{
@@ -111,7 +117,8 @@ const mapDispatchToProps = dispatch => {
         onIngredientAdded: (ingName) => dispatch(actions.addIngredient(ingName)),
         onIngredientRemoved: (ingName) => dispatch(actions.removeIngredient(ingName)),
         onInitIngredients: () => dispatch(actions.initIngredients()),
-        onInitPurchase: () => dispatch(actions.purchaseInit())
+        onInitPurchase: () => dispatch(actions.purchaseInit()),
+        onSetAuthRedirectpath: (path) => dispatch(actions.setAuthRedirectPath(path))
     }
 }
 
